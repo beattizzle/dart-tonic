@@ -31,6 +31,10 @@ class PitchClass {
 
   String toString() => noteNames[integer];
 
+  String get flatNoteName => flatNoteName[integer];
+  String get sharpNoteName => sharpNoteNames[integer];
+  bool get isEnharmonic => flatNoteNames[integer] != sharpNoteNames[integer];
+
   String get inspect => {'integer': integer}.toString();
 
   Pitch toPitch({int octave = 0}) =>
@@ -59,9 +63,9 @@ class PitchClass {
   // bool operator ==(PitchClass o) => identical(integer, o.integer);
 
   @override
-  bool operator ==(dynamic other) {
-    final PitchClass typedOther = other;
-    return integer == typedOther.integer;
+  bool operator ==(Object other) {
+    if (runtimeType != other.runtimeType) return false;
+    return other is PitchClass && integer == other.integer;
   }
 
   int get hashCode => integer;

@@ -172,10 +172,11 @@ class Pitch {
   //     diatonicSemitones == other.diatonicSemitones &&
   //     accidentalSemitones == other.accidentalSemitones;
   @override
-  bool operator ==(dynamic other) {
-    final Pitch typedOther = other;
-    return diatonicSemitones == typedOther.diatonicSemitones &&
-        accidentalSemitones == typedOther.accidentalSemitones;
+  bool operator ==(Object other) {
+    if (runtimeType != other.runtimeType) return false;
+    return other is Pitch &&
+        diatonicSemitones == other.diatonicSemitones &&
+        accidentalSemitones == other.accidentalSemitones;
   }
 
   int get hashCode => 37 * diatonicSemitones + accidentalSemitones;
@@ -216,6 +217,16 @@ class Pitch {
   String get accidentalsString => accidentalsToString(accidentalSemitones);
 
   String toString() => "$letterName$accidentalsString${octave - 1}";
+
+  String flatEnharmonicName() {
+    final flatName = flatNoteNames[semitones % 12];
+    return "$flatName${octave - 1}";
+  }
+
+  String sharpEnharmonicName() {
+    final sharpName = sharpNoteNames[semitones % 12];
+    return "$sharpName${octave - 1}";
+  }
 
   String get helmholtzName {
     String helmholtzLetter = '';
