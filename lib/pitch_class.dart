@@ -31,6 +31,10 @@ class PitchClass {
 
   String toString() => noteNames[integer];
 
+  String get flatNoteName => flatNoteName[integer];
+  String get sharpNoteName => sharpNoteNames[integer];
+  bool get isEnharmonic => flatNoteNames[integer] != sharpNoteNames[integer];
+
   String get inspect => {'integer': integer}.toString();
 
   Pitch toPitch({int octave = 0}) =>

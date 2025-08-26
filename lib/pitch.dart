@@ -217,6 +217,16 @@ class Pitch {
 
   String toString() => "$letterName$accidentalsString${octave - 1}";
 
+  String flatEnharmonicName() {
+    final flatName = flatNoteNames[semitones % 12];
+    return "$flatName${octave - 1}";
+  }
+
+  String sharpEnharmonicName() {
+    final sharpName = sharpNoteNames[semitones % 12];
+    return "$sharpName${octave - 1}";
+  }
+
   String get helmholtzName {
     String helmholtzLetter = '';
     String helmholtzCommas = '';
