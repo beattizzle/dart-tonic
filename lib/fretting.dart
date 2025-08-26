@@ -166,10 +166,11 @@ class FretPosition {
   //     stringIndex == other.stringIndex && fretNumber == other.fretNumber;
 
   @override
-  bool operator ==(dynamic other) {
-    final FretPosition typedOther = other;
-    return stringIndex == typedOther.stringIndex &&
-        fretNumber == typedOther.fretNumber;
+  bool operator ==(Object other) {
+    if (runtimeType != other.runtimeType) return false;
+    return other is FretPosition &&
+        stringIndex == other.stringIndex &&
+        fretNumber == other.fretNumber;
   }
 
   int get hashCode => 37 * stringIndex + fretNumber;

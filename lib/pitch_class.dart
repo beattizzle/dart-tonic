@@ -63,9 +63,9 @@ class PitchClass {
   // bool operator ==(PitchClass o) => identical(integer, o.integer);
 
   @override
-  bool operator ==(dynamic other) {
-    final PitchClass typedOther = other;
-    return integer == typedOther.integer;
+  bool operator ==(Object other) {
+    if (runtimeType != other.runtimeType) return false;
+    return other is PitchClass && integer == other.integer;
   }
 
   int get hashCode => integer;

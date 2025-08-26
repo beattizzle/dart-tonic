@@ -172,10 +172,11 @@ class Pitch {
   //     diatonicSemitones == other.diatonicSemitones &&
   //     accidentalSemitones == other.accidentalSemitones;
   @override
-  bool operator ==(dynamic other) {
-    final Pitch typedOther = other;
-    return diatonicSemitones == typedOther.diatonicSemitones &&
-        accidentalSemitones == typedOther.accidentalSemitones;
+  bool operator ==(Object other) {
+    if (runtimeType != other.runtimeType) return false;
+    return other is Pitch &&
+        diatonicSemitones == other.diatonicSemitones &&
+        accidentalSemitones == other.accidentalSemitones;
   }
 
   int get hashCode => 37 * diatonicSemitones + accidentalSemitones;
