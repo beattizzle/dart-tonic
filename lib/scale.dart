@@ -167,6 +167,10 @@ final List _scalePatternSpecs = [
     // 'Octatonic' is the classical name. It's the jazz 'Diminished' scale.
     Keywords.name: ScalePatternNames.octatonic,
     Keywords.intervals: [0, 2, 3, 5, 6, 8, 9, 11],
+  },
+  {
+    Keywords.name: ScalePatternNames.chromatic,
+    Keywords.intervals: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
   }
 ];
 

@@ -73,7 +73,7 @@ class ChordPattern {
   static void _initializeChords() {
     if (_chordsInitialized) return;
     _chordsInitialized = true;
-    for (final spec in _chordPatternSpecs) {
+    for (final spec in chordPatternSpecs) {
       final fullName = spec['name'];
       final abbrs = spec['abbrs'];
       final intervals =
@@ -145,7 +145,7 @@ class Chord {
   }
 }
 
-final List _chordPatternSpecs = [
+final List chordPatternSpecs = [
   // Major
   {
     "name": 'Major',
