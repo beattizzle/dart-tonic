@@ -62,6 +62,7 @@ class ScalePatternNames {
         freygish,
         wholeTone,
         octatonic,
+        chromatic,
       ];
 
   static List<String> diatonicMajorModes() => [

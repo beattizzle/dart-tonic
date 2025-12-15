@@ -4,11 +4,11 @@ import 'package:tonic/tonic.dart';
 void main() {
   group('Scale Pattern Names', () {
     group('scales', () {
-      test('should contain 9 scales', () {
-        expect(ScalePatternNames.scaleNames(), hasLength(9));
+      test('should contain 10 scales', () {
+        expect(ScalePatternNames.scaleNames(), hasLength(10));
       });
 
-      test('should contain 9 scales', () {
+      test('should contain 10 scales', () {
         expect(
             ScalePatternNames.scaleNames()
                 .contains(ScalePatternNames.diatonicMajor),
@@ -41,6 +41,10 @@ void main() {
         expect(
             ScalePatternNames.scaleNames()
                 .contains(ScalePatternNames.octatonic),
+            equals(true));
+        expect(
+            ScalePatternNames.scaleNames()
+                .contains(ScalePatternNames.chromatic),
             equals(true));
         expect(
             ScalePatternNames.scaleNames().contains(ScalePatternNames.aeolian),
