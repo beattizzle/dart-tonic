@@ -13,6 +13,7 @@ class ScalePatternNames {
   static const String freygish = 'Freygish';
   static const String wholeTone = 'Whole Tone';
   static const String octatonic = 'Octatonic';
+  static const String chromatic = 'Chromatic';
 
   /////////
   //modes//
